@@ -51,7 +51,17 @@ var employees = [
 */
 
 //Code Here
-
+let employeeUpdater = () => {
+  employees.forEach((element, index, array) => {
+    if(element.firstName === 'Theo') {
+      delete array[index]
+    }
+    if (element.firstName === 'Lorie') {
+      element.department = 'HR'
+    }
+  });
+  return employees;
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -69,7 +79,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+let removeDuplicates = () => {
+  let newArr = []
+  workplaceAccidents.forEach((element, index, array) => {
+    if (!newArr.includes(element)) {
+      newArr.push(element)
+    }
+  });
+  
+  return newArr
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -97,8 +116,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -139,7 +158,11 @@ var myCar = {
 */
 
 //Code Here
-
+let recordCleaner = () => {
+  myCar.accidents.forEach((element, index, array) => {
+    element.atFaultForAccident = false;
+  })
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -158,5 +181,17 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
+let looper = () => {
+  for(let i = 0; i < numsArr.length; i++){
+    for(let j = 0; j < numsArr[i].length; j++){
+      if (numsArr[i][j] % 2 === 0) {
+        numsArr[i][j] = 'even'
+      }
+      else {
+        numsArr[i][j] = 'odd'
+      }
+    }
+  }
+  return numsArr
+}
 
